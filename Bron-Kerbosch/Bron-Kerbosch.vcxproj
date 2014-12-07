@@ -78,9 +78,11 @@
   <ItemGroup>
     <ClCompile Include="BronKerbosch.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RealWorld.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BronKerbosch.h" />
+    <ClInclude Include="RealWorld.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
