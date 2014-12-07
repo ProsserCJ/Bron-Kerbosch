@@ -45,9 +45,9 @@ vector<Person> loadList()
 	ifstream f("friendships.txt");
 	string friendships((std::istreambuf_iterator<char>(f)), istreambuf_iterator<char>());
 	ifstream p("people.txt");
-	cout << p.fail() << endl;
+	//cout << p.fail() << endl;
 	string people((std::istreambuf_iterator<char>(p)), istreambuf_iterator<char>());
-	cout << people.length() << endl;
+	//cout << people.length() << endl;
 	vector<string> peopleList = parse(people, "\n");
 	vector<string> friendList = parse(friendships, "\n");
 	vector<string> ids;
@@ -114,8 +114,15 @@ vector<Person> loadList()
 			id2 = ids.size();
 			ids.push_back(friendshipsP[i].at(1));
 		}
-		output[id1].addFriend(id2);
-		output[id2].addFriend(id1);
+		if(id1 < output.size())
+		{
+			output[id1].addFriend(id2);
+		}
+		if(id2 < output.size())
+		{
+			output[id2].addFriend(id1);
+		}
+		
 	}
 
 	return output;
