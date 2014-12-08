@@ -128,3 +128,46 @@ vector<Person> loadList()
 
 	return output;
 }
+
+void makeDataFile()
+{
+	vector<Person> people = loadList();
+	vector<vector<int>> op;
+	for(int i(0); i < people.size(); i++)
+	{
+		vector<int> a;
+		for(int j(0); j < people.size(); j++)
+		{
+			a.push_back(0);
+		}
+		op.push_back(a);
+	}
+	for(int i(0); i < people.size(); i++)
+	{
+		for(int j(0); j < people.size(); j++)
+		{
+			for(int k(0); k < people[i].friends.size(); k++)
+			{
+				if(people[i].friends[k] == j)
+				{
+					op[i][j] = 1;
+					op[j][i] = 1;
+					break;
+				}
+			}
+		}
+	}
+	ofstream out("realData.txt");
+	for(int i(0); i < people.size(); i++)
+	{
+		for(int j(0); j < people.size(); j++)
+		{
+			out << op[i][j];
+		}
+		if(i < people.size()-1)
+		{
+				out << endl;
+		}
+	}
+	out.close();
+}
