@@ -10,12 +10,16 @@
 
 void main()
 {
-	
+	//makeDataFile();
 	//BronKerbosch bk("input.txt");
-	BronKerbosch bk("realData.txt");
+	//BronKerbosch bk("realData.txt");
+	//BronKerbosch bk("realData2.txt");
+	//BronKerbosch bk("realData3.txt");
+	BronKerbosch bk("realData4.txt");
+
 
 	bk.run();
 	bk.print();	
 
-	bk.analyze(7);
+	//bk.analyze(2);
 }

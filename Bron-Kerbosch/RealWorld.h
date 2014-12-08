@@ -157,14 +157,14 @@ void makeDataFile()
 			}
 		}
 	}
-	ofstream out("realData.txt");
-	for(int i(0); i < people.size(); i++)
+	ofstream out("realData4.txt");
+	for(int i(0); i < people.size()/8; i++)
 	{
-		for(int j(0); j < people.size(); j++)
+		for(int j(0); j < people.size()/8; j++)
 		{
 			out << op[i][j];
 		}
-		if(i < people.size()-1)
+		if(i < people.size()/8-1)
 		{
 				out << endl;
 		}
