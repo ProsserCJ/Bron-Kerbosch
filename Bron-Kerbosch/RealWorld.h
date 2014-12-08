@@ -36,6 +36,7 @@ vector<string> parse(string s, string delimiter)
 		rtn.push_back(token);
 		s.erase(0, pos + delimiter.length());
 	}
+	rtn.push_back(s);
 	return rtn;
 }
 
@@ -81,8 +82,8 @@ vector<Person> loadList()
 	}
 	for(int i(0); i < friendshipsP.size(); i++)
 	{
-		int id1;
-		int id2;
+		int id1(0);
+		int id2(0);
 		bool found(false);
 		for(int j(0); j < ids.size(); j++)
 		{
