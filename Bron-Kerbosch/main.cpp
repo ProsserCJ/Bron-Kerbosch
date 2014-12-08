@@ -6,10 +6,14 @@
 */
 
 #include "BronKerbosch.h"
+#include "RealWorld.h"
 
 void main()
 {
-	BronKerbosch bk("input.txt");
+	
+	//BronKerbosch bk("input.txt");
+	BronKerbosch bk("realData.txt");
+
 	bk.run();
 	bk.print();	
 
